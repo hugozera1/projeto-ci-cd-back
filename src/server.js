@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 // CORS liberado para qualquer front (ou coloque o domínio da Vercel depois)
 app.use(
   cors({
-    origin: "*",
+    origin: "https://projeto-ci-cd-front-iota-eta.vercel.app/",
   })
 );
 

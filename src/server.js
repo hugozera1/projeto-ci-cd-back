@@ -1,15 +1,20 @@
 import express from "express";
 import cors from "cors";
-import routes from "./routes/index.js";
 
 const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-app.use("/", routes);
-
 const PORT = process.env.PORT || 3000;
+
+// CORS liberado para qualquer front (ou coloque o domínio da Vercel depois)
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
+app.get("/", (req, res) => {
+  res.json({ mensagem: "API online e integrada com CI/CD!" });
+});
+
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });

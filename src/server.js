@@ -12,7 +12,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.json({ mensagem: "API online e integrada com CI/CD!" });
+  res.json({ mensagem: "API online e integrada com CI/CD! e alterada" });
 });
 
 app.listen(PORT, () => {
